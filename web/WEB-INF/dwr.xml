@@ -1,0 +1,32 @@
+<!DOCTYPE dwr PUBLIC
+    "-//GetAhead Limited//DTD Direct Web Remoting 3.0//EN"
+    "http://getahead.org/dwr/dwr30.dtd">
+
+<dwr>
+    <allow>
+        <convert converter="bean" match="av.online_exampaper.bean.EvaluationLoadBean">
+            <!--<param name="exclude" value="name,address,gender,email,userName,password,languageId,rId,language,zip"/>-->
+        </convert>
+        <create creator="new" javascript="EvaluationAjax">
+            <param name="class" value="av.online_exampaper.dao.EvaluationLoadDao"/>
+            
+        </create>
+        
+        <convert converter="bean" match="av.online_exampaper.bean.AllListQuestionBean">
+            <!--<param name="exclude" value="name,address,gender,email,userName,password,languageId,rId,language,zip"/>-->
+        </convert>
+         <create creator="new" javascript="QuestionAjax">
+            <param name="class" value="av.online_exampaper.dao.AllListQuestionDao"/>
+            
+        </create>
+        
+         <convert converter="bean" match="av.online_exampaper.bean.AdminAjaxBean">
+            <!--<param name="exclude" value="name,address,gender,email,userName,password,languageId,rId,language,zip"/>-->
+        </convert>
+         <create creator="new" javascript="AdminAjax">
+            <param name="class" value="av.online_exampaper.dao.AdminAjaxDao"/>
+            
+        </create>
+        
+    </allow>
+</dwr>
